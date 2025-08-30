@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global luxury design system */
+:root {
+  /* Low-light atmospheric colors */
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #141416;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --text-primary: #f8f9fa;
+  --text-secondary: #a8a8b3;
+  --text-muted: #6c6c7c;
+  
+  /* Chapter color themes */
+  --madeira-primary: #f17a0f;
+  --sporting-primary: #319968;
+  --madrid-primary: #ffffff;
+  --red-primary: #dc143c;
+  --black-primary: #000000;
+  --gold-primary: #ffd700;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Sophisticated scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--madeira-primary), rgba(241, 122, 15, 0.5));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--madeira-primary);
+}
+
+/* Luxury typography system */
+.heading-primary {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-secondary {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.heading-tertiary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.body-large {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.body-medium {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Glassmorphism effects */
+.glass-light {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-medium {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Atmospheric effects */
+.atmospheric-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.atmospheric-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(241, 122, 15, 0.1) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Luxury button system */
+.btn-primary {
+  @apply px-8 py-4 bg-gradient-to-r from-madeira-500 to-madeira-600 text-white font-medium rounded-lg transition-all duration-300 hover:from-madeira-600 hover:to-madeira-700 hover:shadow-lg hover:shadow-madeira-500/25 focus:outline-none focus:ring-2 focus:ring-madeira-500/50;
+}
+
+.btn-ghost {
+  @apply px-6 py-3 glass-light text-white font-medium rounded-lg transition-all duration-300 hover:glass-medium hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/20;
+}
+
+/* Kinetic typography */
+.kinetic-text {
+  animation: kinetic 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Chapter color themes */
+.theme-madeira {
+  --theme-primary: var(--madeira-primary);
+  --theme-gradient: linear-gradient(135deg, #f17a0f 0%, #e25c05 100%);
+}
+
+.theme-sporting {
+  --theme-primary: var(--sporting-primary);
+  --theme-gradient: linear-gradient(135deg, #319968 0%, #237b52 100%);
+}
+
+.theme-madrid {
+  --theme-primary: var(--madrid-primary);
+  --theme-gradient: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
+}
+
+.theme-red {
+  --theme-primary: var(--red-primary);
+  --theme-gradient: linear-gradient(135deg, #dc143c 0%, #b91c3c 100%);
+}
+
+.theme-black {
+  --theme-primary: var(--black-primary);
+  --theme-gradient: linear-gradient(135deg, #000000 0%, #18181b 100%);
+}
+
+.theme-gold {
+  --theme-primary: var(--gold-primary);
+  --theme-gradient: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%);
+}
+
+/* Sophisticated image filters */
+.image-artistic {
+  filter: contrast(1.1) saturate(1.2) brightness(0.9) sepia(0.1);
+  transition: filter 0.3s ease;
+}
+
+.image-artistic:hover {
+  filter: contrast(1.2) saturate(1.3) brightness(1.0) sepia(0.05);
+}
+
+/* Parallax container */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Smooth reveal animation */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, rgba(255, 255, 255, 0.05) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .heading-primary {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .heading-secondary {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+  
+  .body-large {
+    font-size: 1rem;
+  }
+}
