@@ -1,3 +1,4 @@
+// Clean luxury design - no loading screens or templates
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
