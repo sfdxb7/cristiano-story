@@ -1,0 +1,15 @@
+{
+  "name": "cristiano-story",
+  "description": "The Making of Greatness - Cristiano Ronaldo Digital Biography",
+  "type": "nextjs",
+  "buildCommand": "npm ci && npm run build",
+  "startCommand": "npm start",
+  "port": 3000,
+  "envs": {
+    "NODE_ENV": "production",
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
+  "domains": [],
+  "volumes": [],
+  "secrets": []
+}
