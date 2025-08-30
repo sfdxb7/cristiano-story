@@ -107,26 +107,19 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* Glassmorphism effects */
-.glass-light {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+@layer components {
+  /* Glassmorphism effects */
+  .glass-light {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
 
-.glass-medium {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
+  .glass-medium {
+    @apply backdrop-blur-xl bg-white/15 border border-white/30;
+  }
 
-.glass-dark {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/20 border border-white/10;
+  }
 }
 
 /* Atmospheric effects */
@@ -147,13 +140,15 @@ body {
   pointer-events: none;
 }
 
-/* Luxury button system */
-.btn-primary {
-  @apply px-8 py-4 bg-gradient-to-r from-madeira-500 to-madeira-600 text-white font-medium rounded-lg transition-all duration-300 hover:from-madeira-600 hover:to-madeira-700 hover:shadow-lg hover:shadow-madeira-500/25 focus:outline-none focus:ring-2 focus:ring-madeira-500/50;
-}
+@layer components {
+  /* Luxury button system */
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium rounded-lg transition-all duration-300 hover:from-orange-600 hover:to-orange-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500/50;
+  }
 
-.btn-ghost {
-  @apply px-6 py-3 glass-light text-white font-medium rounded-lg transition-all duration-300 hover:glass-medium hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/20;
+  .btn-ghost {
+    @apply px-6 py-3 glass-light text-white font-medium rounded-lg transition-all duration-300 hover:glass-medium hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/20;
+  }
 }
 
 /* Kinetic typography */

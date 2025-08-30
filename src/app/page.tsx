@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import GlassNavigation from '@/components/GlassNavigation'
 import ChapterIntro from '@/components/ChapterIntro'
@@ -94,7 +94,7 @@ export default function Home() {
   }
 
   return (
-    <AnimatePresence>
+    <div>
       <main className="relative">
         <GlassNavigation 
           activeChapter={activeChapter}
@@ -312,6 +312,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-    </AnimatePresence>
+    </div>
   )
 }
